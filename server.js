@@ -16,7 +16,7 @@ app.use(cors({ origin: true, credentials: true }));
 
 // initialize middleware
 app.use(express.json({ extended: false }));
-app.get("/", (req, res) => res.send("server is active"));
+app.get("/", (req, res) => res.send("server is active KIRAN"));
 
 // use routes
 app.use("/api/todo", todo);
