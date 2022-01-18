@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
+const path = require('path')
 const connectDB = require("./config/db");
 
 const app = express();
@@ -13,6 +13,8 @@ connectDB();
 
 // cors
 app.use(cors({ origin: true, credentials: true }));
+
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 // initialize middleware
 app.use(express.json({ extended: false }));
